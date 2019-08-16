@@ -3,7 +3,7 @@ LABEL maintainer="Daniel Weisser <daniel.weisser@gmail.com>"
 LABEL Description="Docker Container for generating documentation with docToolchain"
 
 
-RUN apt-get -qq update && apt-get install -qq -y apt-transport-https ca-certificates curl software-properties-common git openjdk-8-jdk gradle
+RUN apt-get -qq update && apt-get install -qq -y apt-transport-https ca-certificates curl software-properties-common git graphviz openjdk-8-jdk gradle
 
 RUN git clone --recursive https://github.com/docToolchain/docToolchain.git && \
       cd docToolchain && \
