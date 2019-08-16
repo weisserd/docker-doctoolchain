@@ -15,4 +15,6 @@ RUN git clone --recursive https://github.com/docToolchain/docToolchain.git && \
 
 ENV PATH="/docToolchain/bin:${PATH}"
 
+RUN update-java-alternatives -s java-1.8.0-openjdk-amd64
+
 ENTRYPOINT /bin/bash
