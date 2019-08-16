@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM ubuntu:18.04
 LABEL maintainer="Daniel Weisser <daniel.weisser@gmail.com>"
 LABEL Description="Docker Container for generating documentation with docToolchain"
 
