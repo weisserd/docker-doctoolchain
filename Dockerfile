@@ -10,10 +10,7 @@ RUN git clone --recursive https://github.com/docToolchain/docToolchain.git && \
       git checkout v1.1.0 && \
       rm -rf .git && \
       rm -rf resources/asciidoctor-reveal.js/.git && \
-      rm -rf resources/reveal.js/.git && \
-      PATH="/docToolchain/bin:${PATH}"
-
-ENV PATH="/docToolchain/bin:${PATH}"
+      rm -rf resources/reveal.js/.git
 
 RUN update-java-alternatives -s java-1.8.0-openjdk-amd64
 
