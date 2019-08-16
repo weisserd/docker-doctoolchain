@@ -5,12 +5,12 @@ LABEL Description="Docker Container for generating documentation with docToolcha
 
 RUN apt-get -qq update && apt-get install -qq -y apt-transport-https ca-certificates curl software-properties-common git openjdk-8-jdk gradle
 
-RUN git clone https://github.com/docToolchain/docToolchain.git && \
+RUN git clone --recursive https://github.com/docToolchain/docToolchain.git && \
       cd docToolchain && \
       git checkout v1.1.0 && \
-      git submodule update -i && \
-      gradle tasks && \
-      gradle && \
+      rm -rf .git && \
+      rm -rf resources/asciidoctor-reveal.js/.git && \
+      rm -rf resources/reveal.js/.git && \
       PATH="/docToolchain/bin:${PATH}"
 
 ENV PATH="/docToolchain/bin:${PATH}"
